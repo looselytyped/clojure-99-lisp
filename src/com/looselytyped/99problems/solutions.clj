@@ -16,7 +16,7 @@
   * (my-last '(a b c d))
     (D)"
   [coll]
-  (flatten coll))
+  (last coll))
 
 (defn my-but-last
   "P02. Find the last but one box of a list
@@ -29,13 +29,13 @@
      (= 2 size) coll
      :else (recur (rest coll)))))
 
-(defn idiomatic-last
+(defn idiomatic-but-last
   "P02. Find the last but one box of a list
   Example:
   * (my-but-last '(a b c d))
     (C D)"
   [coll]
-  (last coll))
+  (reverse (take 2 (reverse coll))))
 
 (defn element-at
   "P03. Find the K'th element of a list
@@ -280,3 +280,30 @@
   (flatten (map #(if (coll? %) (repeat (first %) (second %)) %) coll)))
 
 
+(defn duplicate
+  "P13. Duplicate the elements of a list.
+   Example:
+   * (dupli '(a b c c d))
+   (A A B B C C C C D D)"
+  [coll]
+  (loop [c coll
+         acc ()]
+    (if (my-empty? c)
+      acc
+      (recur (rest c) (concat acc (list (first c) (first c)))))))
+
+(defn idiomatic-duplicate
+  "P13. Duplicate the elements of a list.
+   Example:
+   * (dupli '(a b c c d))
+   (A A B B C C C C D D)"
+  [coll]
+  (flatten (map #(list % %) coll)))
+
+(defn my-replicate
+  "Replicate the elements of a list a given number of times.
+   Example:
+   * (repli '(a b c) 3)
+   (A A A B B B C C C)"
+  [coll n]
+  )

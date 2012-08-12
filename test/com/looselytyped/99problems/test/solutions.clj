@@ -9,11 +9,24 @@
        1 (my-last [1])
        4 (my-last [1 3 4])))
 
+(deftest test-my-last
+  []
+  (are [act exp] [= act exp]
+       nil (idiomatic-last [])
+       1 (idiomatic-last [1])
+       4 (idiomatic-last [1 3 4])))
+
 (deftest test-my-but-last
   []
   (are [act exp] (= act exp)
        '(1 2) (my-but-last [1 2])
        '(3 4) (my-but-last [1 2 3 4])))
+
+(deftest test-my-but-last
+  []
+  (are [act exp] (= act exp)
+       '(1 2) (idiomatic-but-last [1 2])))
+
 
 (deftest test-element-at
   []
@@ -117,5 +130,18 @@
   (are [act exp] (= act exp)
        () (idiomatic-decode ())
        '(a a a a b c c a a d e e e e) (decode '((4 a) b (2 c) (2 a) d (4 e)))))
+
+
+(deftest test-duplicate
+  []
+  (are [act exp] (= act exp)
+       () (duplicate ())
+       '(a a b b c c c c d d) (duplicate '(a b c c d))))
+
+(deftest test-idiomatic-duplicate
+  []
+  (are [act exp] (= act exp)
+       () (idiomatic-duplicate ())
+       '(a a b b c c c c d d) (idiomatic-duplicate '(a b c c d))))
 
 
