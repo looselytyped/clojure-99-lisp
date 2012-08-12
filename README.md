@@ -1,12 +1,10 @@
 # com-looselytyped-99problems
 
-I'm an app. Or maybe I'm a library? I haven't decided yet. 
+This is an attempt at solving the [99-Lisp-Problems](http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html) in Clojure.
 
-The choice is up to you!
+I have two solutions for each one - One that attempts at using pure recursion and lists, and an 'idiomatic' version that uses 'the Clojure way'. 
 
-## Usage
-
-FIXME
+Needless to say, I am hoping, and expecting that the *idiomatic* version changes over time as I get more experience with Clojure. 
 
 ## License
 
